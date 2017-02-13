@@ -1,3 +1,0 @@
-Employee{id=5, name=t, birthday=Fri Mar 03 00:00:00 ICT 2000, position=tg, basicSalary=2100000.0, wage=4.0}
-Employee{id=443, name=gg, birthday=Tue Apr 04 00:00:00 ICT 444, position=q, basicSalary=2100000.0, wage=4.0}
-Test2
