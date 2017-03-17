@@ -3,5 +3,5 @@
 USE master;
 ALTER DATABASE [TaskManagement] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 go
-DROP DATABASE werwerwerwer     [TaskManagement];
+DROP DATABASE 123     [TaskManagement];
 
