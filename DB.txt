@@ -1,0 +1,23 @@
+1) FrameProgram
+	Id
+	CreatedYear (Năm)
+	Title	(Tiêu đề)
+	ChannelId (Kênh)
+	StartDate -> EndDate ( Thời gian áp dụng)
+	Description ( Ghi chú)
+2) FrameProgramContent
+	Id
+	FrameProgramId (Id khung chương trình )
+	BussinessUnitId(Ban biên tập)
+	ProgramName (Tên chương trình)
+	StartHour (Khung giờ phát sóng)
+	TimeRemain (Thời lượng)	
+	TimeRepeater1 (Phát lại lần 1)
+	RepeaterDate1 (Ngày phát lại lần 1)
+	TimeRepeater2 (Phát lại lần 2)
+	RepeaterDate2 (Ngày phát lại lần 2)
+	TimeRepeater3 (Phát lại lần 3)
+	RepeaterDate3 (Ngày phát lại lần 3)
+	TypeRepeater ( Loại lặp lại )
+	Description ( Ghi chú )
+	Status (Trạng thái)
