@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("CheckLogin", "Account", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group col-sm-12 col-md-12">
+            <label style="display: block; margin-top: 5px; color: #33336c; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; " class="col-sm-4 col-md-4 control-label" for="UserName">Tên đăng nhập:</label>
+            <div class="col-sm-8 col-md-8">
+                <input class="form-control" id="userName" name="userName" type="text" style="height:40px;">
+                <input type="hidden" value="@ViewBag.url" name="url" id="url"/>
+            </div>
+        </div>
+        <div class="form-group col-sm-12 col-md-12">
+            <label style="display: block; margin-top: 5px; color: #33336c; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; " class="col-sm-4 col-md-4 control-label" for="Password">Mật khẩu:</label>
+            <div class="col-sm-8 col-md-8">
+                <input class="form-control" id="password" name="password" type="password" style="height:40px;">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-sm btn-primary" value="Đăng nhập" />
+        </div>
+    </div>
+    
+}
+    <a href="#">Quên mật khẩu</a>
+
