@@ -40,5 +40,17 @@ namespace OriFood.Helpers
         {
             return model.ToEntity();
         }
+
+        public void Post(TModel model)
+        {
+            TEntity entity = new TEntity();
+            model.UpdateEntity(entity);
+        }
+
+        public bool Delete(TModel model)
+        {
+            int a = model.Id;
+            return true;
+        }
     }
 }

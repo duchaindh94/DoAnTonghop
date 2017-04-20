@@ -33,6 +33,7 @@ namespace OriFood.Models
             {
                 Id = this.Id,
                 Name = this.Name,
+                ProvinceId = this.ProvinceId,
             };
         }
 
@@ -40,6 +41,8 @@ namespace OriFood.Models
         {
             this.Id = entity.Id;
             this.Name = entity.Name;
+            this.ProvinceId = entity.ProvinceId;
+            this.ProvinceName = entity.Province.Name;
             this.IsDeleted = entity.IsDeleted;
             return this;
         }
@@ -48,6 +51,7 @@ namespace OriFood.Models
         {
             entity.Id = this.Id;
             entity.Name = this.Name;
+            entity.ProvinceId = this.ProvinceId;
             entity.IsDeleted = this.IsDeleted;
         }
     }

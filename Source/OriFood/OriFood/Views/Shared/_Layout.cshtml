@@ -8,8 +8,7 @@
         var serviceUrl = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ServiceUrl"])';
         var userId = '@Session["UserId"]';
     </script>
-    @Styles.Render("~/Content/StyleSheet")
-    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -25,9 +24,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     <li>@Html.ActionLink("Account", "Index", "Account")</li>
                     <li>@Html.ActionLink("Register", "Register", "Account")</li>
                 </ul>
