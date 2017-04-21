@@ -43,7 +43,6 @@
     self.view = function (data) {
         toastr.success("Hiển thị thông tin chi tiết người dùng");
         console.log("adddd");
-        debugger;
         //Get user info
         loadUserInfo();
     }
@@ -68,6 +67,7 @@
     };
 
     function loadUserInfo() {
+        debugger;
         dataModel.apiRequest('GET', self.apiController + '/GetInfoCurrentUser').success(function (returnData) {
             //self.currentUser(returnData);
             self.currentUser(new UserModel(returnData));

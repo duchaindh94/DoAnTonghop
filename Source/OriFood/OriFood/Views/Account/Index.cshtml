@@ -6,19 +6,17 @@
 <h1>UserID: @Session["UserId"]</h1>
 <h1>UserName: @Session["UserName"]</h1>
 
-<script  type="text/javascript">
-    debugger;
-</script>
-
 <a href="/Account/Logout"> Logout  </a> || 
 
-@*<div class="function">
+<!-- ko with: user -->
+<div class="function">
     <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#user-view-modal" data-bind="click: view">
         <span class="glyphicon glyphicon-search"></span>Xem thông tin chi tiết người dùng
     </button>
-</div>*@
-<!-- ko with: user -->
-@*<div class="modal fade" id="user-view-modal" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+</div>
+
+
+<div class="modal fade" id="user-view-modal" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog width50pc">
         <div class="modal-content">
             <div class="modal-header">
@@ -125,11 +123,11 @@
             </div>
         </div>
     </div>
-</div>*@
+</div>
 <!-- /ko -->
 
-@*@section Scripts{
+@section Scripts{
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/app")
     @Scripts.Render("~/bundles/user")
-}*@
+}

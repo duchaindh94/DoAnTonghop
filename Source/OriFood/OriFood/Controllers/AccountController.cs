@@ -69,7 +69,35 @@ namespace OriFood.Controllers
         [HttpGet]
         public JsonResult GetInfoCurrentUser()
         {
-            return Json(CurrentUser);
+            return Json(CurrentUser, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public JsonResult LoginJson(string userName, string password)
+        {
+
+            if (CurrentUser.Id != 0)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                Session.Clear();
+                var rs = db.Users.Where(b => b.UserName == userName && b.FullName == password).FirstOrDefault();
+                if (rs != null)
+                {
+                    Session.Add("UserId", rs.Id);
+                    Session.Add("UserName", rs.UserName);
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(false, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return null;
+        }
+
+
     }
 }
