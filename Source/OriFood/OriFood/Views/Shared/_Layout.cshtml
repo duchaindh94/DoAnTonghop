@@ -5,16 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - OriFood</title>
     <script type="text/javascript">
-        var serviceUrl = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ServiceUrl"])';
-        var userId = '@Session["UserId"]';
+            var serviceUrl = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ServiceUrl"])';
+            var userId = '@Session["UserId"]';
     </script>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+        @*@Styles.Render("~/Content/css")*@
+        @Scripts.Render("~/bundles/modernizr")
+        @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+               setTimeout(hideURLbar, 0);
+           }, false);
+           function hideURLbar() {
+               window.scrollTo(0, 1);
+           } </script>
+    <link href="../Scripts/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="../Scripts/css/style.css" rel='stylesheet' type='text/css' />
+    <script src="../Scripts/js/jquery-1.10.2.min.js"></script>
+    <!----requred-js-files---->
+    <!----//requred-js-files---->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet'
+          type='text/css'>
+    <!----Calender -------->
+    <link rel="stylesheet" href="../Scripts/css/clndr.css" type="text/css" />
+    <script src="../Scripts/js/underscore.min.js"></script>
+    <script src="../Scripts/js/underscore.js"></script>
+    <script src="../Scripts/js/moment.js"></script>
+    <script src="../Scripts/js/clndr.js"></script>
+    <script src="../Scripts/js/site.js"></script>
+    <!----End Calender -------->
+    <script type="text/javascript" src="../Scripts/js/move-top.js"></script>
+    <script type="text/javascript" src="../Scripts/js/easing.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,25 +49,159 @@
                 @Html.ActionLink("OriFood", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Account", "Index", "Account")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                </ul>
+                <ul class="nav navbar-nav">*@
+    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+    @*<li>@Html.ActionLink("Account", "Index", "Account")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - OriFood</p>
+            </footer>
+        </div>
+
+
+        @RenderSection("scripts", required: false)*@
+    <div class="header" id="home">
+        <div class="container">
+            <div class="logo">
+                @*<img src="../Scripts/images/logo.png" alt="" />*@
+                <p style="color:white; font-size:140px;">OriFood</p>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - OriFood</p>
-        </footer>
-    </div>
+    <div class="header-home">
+        <div class="container">
+            <div class="fixed-header">
+                <div class="h_menu4">
+                    <!-- start h_menu4 -->
+                    <a class="toggleMenu" href="#">Menu</a>
+                    <ul class="nav">
+                        <li class="active"><a href="#home" class="scroll">Home</a></li>
+                        <li><a href="#announce" class="scroll">Announcements</a></li>
+                        <li><a href="#menu" class="scroll">Menus</a></li>
+                        <li><a href="#gallery" class="scroll">Gallery</a></li>
+                        <li><a href="#about" class="scroll">About</a></li>
+                        <li><a href="#contact" class="scroll">Contact</a></li>
+                    </ul>
+                    <script type="text/javascript" src="../Scripts/js/nav.js"></script>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function ($) {
+                            $(".scroll").click(function (event) {
+                                event.preventDefault();
+                                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                            });
+                        });
+                    </script>
+                    <!--script-->
+                    <script>
+                        $(document).ready(function () {
+                            $(".nav li a").click(function () {
+                                $(this).parent().addClass("active");
+                                $(this).parent().siblings().removeClass("active");
+                            });
+                        });
+                    </script>
+                    <!-- script-for sticky-nav -->
+                    <script>
+                        $(document).ready(function () {
+                            var navoffeset = $(".header-home").offset().top;
+                            $(window).scroll(function () {
+                                var scrollpos = $(window).scrollTop();
+                                if (scrollpos >= navoffeset) {
+                                    $(".header-home").addClass("fixed");
+                                } else {
+                                    $(".header-home").removeClass("fixed");
+                                }
+                            });
 
-    
+                        });
+                    </script>
+                    <!-- /script-for sticky-nav -->
+                </div><!-- end h_menu4 -->
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="announce" id="announce">
+                <h1 class="tz-title-4 tzcolor-blue">
+                    <span class="tzweight_Bold">Announcements</span>
+                </h1>
+                <div class="section_group">
+                    <div class="container body-content">
+                        @RenderBody()
+                        <hr />
+                    </div>
+                </div>
+            </div>         
+            <div class="contact" id="contact">
+                <h3 class="tz-title-2">
+                    <span class="tzweight_Bold">Contact</span>
+                </h3>
+                <div class="contact_box">
+                    <div class="col-md-6 contact_form">
+                        <form>
+                            <div class="column_2">
+                                <input type="text" class="text" value="Name" onfocus="this.value = '';"
+                                       onblur="if (this.value == '') {this.value = 'Name';}">
+                                <input type="text" class="text" value="Email" onfocus="this.value = '';"
+                                       onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:2.7%">
+
+                            </div>
+                            <div class="column_3">
+                                <textarea value="Message:" onfocus="this.value = '';"
+                                          onblur="if (this.value == '') {this.value = 'Message';}">
+                                    Message:
+                                </textarea>
+                            </div>
+                            <div class="form-submit1">
+                                <label class="btn btn-primary btn-normal btn-inline " target="_self">
+                                    <input type="submit"
+                                    value="Send">
+                                </label>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"></iframe>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="copy">
+                <p>&copy; @DateTime.Now.Year - OriFood</p>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    /*
+                     var defaults = {
+                     containerID: 'toTop', // fading element id
+                     containerHoverID: 'toTopHover', // fading element hover id
+                     scrollSpeed: 1200,
+                     easingType: 'linear'
+                     };
+                     */
+
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+
+                });
+            </script>
+            <a class="scroll" href="#home" id="toTop" style="display: block;">
+                <span id="toTopHover"
+                style="opacity: 1;"></span>
+            </a>
+        </div>
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -3,68 +3,78 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
-<h3>Form đăng nhập sử dụng MVC</h3>
+<h2 style="color:white;">Login</h2>
+<h3 style="color:white;">Form đăng nhập sử dụng MVC</h3>
 @using (Html.BeginForm("CheckLogin", "Account", FormMethod.Post))
 {
     <div class="form-horizontal">
         <div class="form-group col-sm-12 col-md-12">
-            <label style="display: block; margin-top: 5px; color: #33336c; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; " class="col-sm-4 col-md-4 control-label" for="UserName">Tên đăng nhập:</label>
+            <label style="display: block; margin-top: 5px; color: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; " class="col-sm-4 col-md-4 control-label" for="UserName">Tên đăng nhập:</label>
             <div class="col-sm-8 col-md-8">
                 <input class="form-control" id="userName" name="userName" type="text" style="height:40px;">
                 <input type="hidden" value="@ViewBag.url" name="url" id="url" />
             </div>
         </div>
         <div class="form-group col-sm-12 col-md-12">
-            <label style="display: block; margin-top: 5px; color: #33336c; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; " class="col-sm-4 col-md-4 control-label" for="Password">Mật khẩu:</label>
+            <label style="display: block; margin-top: 5px; color: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; " class="col-sm-4 col-md-4 control-label" for="Password">Mật khẩu:</label>
             <div class="col-sm-8 col-md-8">
                 <input class="form-control" id="password" name="password" type="password" style="height:40px;">
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-4">
+            @*<div class="col-md-4">
 
-            </div>
+            </div>*@
             <div class="col-md-8">
-                <input type="submit" class="btn btn-sm btn-primary" value="Đăng nhập" />
+                <div class="form-submit1">
+                    <label class="btn btn-primary btn-normal btn-inline " target="_self">
+                        <input type="submit"
+                               value="Đăng nhập" />                        
+                    </label>
+                    <a href="#">Quên mật khẩu</a>
+                </div>
                 <br />
-                <a href="#">Quên mật khẩu</a>
+                
 
             </div>
         </div>
     </div>
 }
 
-<h3>Form đăng nhập sử dụng ajax</h3>
+<h3 style="color:white;">Form đăng nhập sử dụng ajax</h3>
 <!-- ko with: user -->
 
 <div class="fieldset-container">
     <fieldset>
-        <legend>Nhập thông tin tài khoản</legend>
+        <legend style="color:white;">Nhập thông tin tài khoản</legend>
         <fieldset>
             <form class="form-horizontal" data-bind="submit: submit, with: currentUser">
-                <div class="form-group">
-                    <label class="col-sm-3 col-md-3 control-label">Tên đăng nhập:</label>
-                    <div class="col-sm-9 col-md-9">
-                        <input type="text" class="form-control" id="txtName" placeholder="Tên đăng nhập" data-bind="value: UserName" />
+                <div class="form-group col-sm-12 col-md-12">
+                    <label class="col-sm-4 col-md-4 control-label" style="color:white;">Tên đăng nhập:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input type="text" class="form-control" id="txtName" placeholder="Tên đăng nhập" data-bind="value: UserName" style="height:40px;" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-3 col-md-3 control-label">Mật khẩu:</label>
-                    <div class="col-sm-9 col-md-9">
-                        <input type="password" class="form-control" id="txtName" placeholder="*******" data-bind="value: PasswordHash" />
+                <div class="form-group col-sm-12 col-md-12">
+                    <label class="col-sm-4 col-md-4 control-label" style="color:white;">Mật khẩu:</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input type="password" class="form-control" id="txtName" placeholder="*******" data-bind="value: PasswordHash" style="height:40px;" />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-sm-12 col-md-12">
                     <label for="txtOrgName" class="col-sm-4 col-md-4 control-label"></label>
                     <div class="col-sm-8 col-md-8">
                         <span class="control-label" data-bind="text: Status"></span>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <button type="submit" class="btn btn-sm btn-default">
-                        <span class="glyphicon glyphicon-floppy-disk"></span>Đăng nhập
-                    </button>
+                <div class="col-md-8">
+                    <div class="form-submit1">
+                        <label class="btn btn-primary btn-normal btn-inline " target="_self">
+                            <input type="submit"
+                                   value="Đăng nhập"/>
+                        </label>
+                        <a href="#">Quên mật khẩu</a>
+                    </div>
                 </div>
             </form>
         </fieldset>
