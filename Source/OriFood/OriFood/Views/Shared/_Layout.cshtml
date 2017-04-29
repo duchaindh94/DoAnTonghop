@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - OriFood</title>
     <script type="text/javascript">
-            var serviceUrl = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ServiceUrl"])';
-            var userId = '@Session["UserId"]';
+        var serviceUrl = '@Html.Raw(System.Configuration.ConfigurationManager.AppSettings["ServiceUrl"])';
+        var userId = '@Session["UserId"]';
     </script>
-        @*@Styles.Render("~/Content/css")*@
-        @Scripts.Render("~/bundles/modernizr")
-        @*@Scripts.Render("~/bundles/jquery")
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")*@
     <script type="application/x-javascript">
         addEventListener("load", function () {
@@ -21,7 +21,9 @@
            } </script>
     <link href="../Scripts/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="../Scripts/css/style.css" rel='stylesheet' type='text/css' />
-    <script src="../Scripts/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="../Scripts/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Scripts/select2/select2.min.css">
+    <script src="../Scripts/js/jquery-1.11.1.min.js"></script>
     <!----requred-js-files---->
     <!----//requred-js-files---->
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet'
@@ -30,9 +32,10 @@
     <link rel="stylesheet" href="../Scripts/css/clndr.css" type="text/css" />
     <script src="../Scripts/js/underscore.min.js"></script>
     <script src="../Scripts/js/underscore.js"></script>
-    <script src="../Scripts/js/moment.js"></script>
+    <script src="../Scripts/js/moment-2.2.1.js"></script>
     <script src="../Scripts/js/clndr.js"></script>
     <script src="../Scripts/js/site.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <!----End Calender -------->
     <script type="text/javascript" src="../Scripts/js/move-top.js"></script>
     <script type="text/javascript" src="../Scripts/js/easing.js"></script>
@@ -69,6 +72,107 @@
 
 
         @RenderSection("scripts", required: false)*@
+    @*col-sm-12 col-md-12*@
+    <div class="header-home" style="position:fixed;width:100%">
+        <div class="container">
+            <div class="fixed-header">
+                <div class="h_menu4">
+                    <!-- start h_menu4 -->
+                    <a class="toggleMenu" href="#">Menu</a>
+                    <ul class="nav" style="margin-bottom:-5px;margin-top:5px;">
+                        <li style="margin-right:20px;">
+                            <div class="form-group">
+                                <select class="form-control select2" style="width: 100%;background-color: #e7e7e7;">
+                                    <option selected="selected">Combobox1</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                            <script>
+                                $(function () {
+                                    //Initialize Select2 Elements
+                                    $(".select2").select2();
+                                });
+                            </script>
+                        </li>
+                        <li style="margin-right:20px;">
+                            <div class="form-group">
+                                <select class="form-control select2" style="width: 100%;background-color: #e7e7e7;">
+                                    <option selected="selected">Combobox2</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                            <script>
+                                $(function () {
+                                    //Initialize Select2 Elements
+                                    $(".select2").select2();
+                                });
+                            </script>
+                        </li>
+                        <li style="margin-bottom:-13px;">
+                            <div class="input-group" style="width:450px;">
+                                <input type="text" name="q" class="form-control" placeholder="Search..." style="background-color: #e7e7e7">
+                                <span class="input-group-btn">
+                                    <button type="submit" name="search" id="search-btn" class="btn btn-flat" style="background-color: #e7e7e7">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li style="margin-left:20px;">
+                            <label class="btn btn-primary btn-normal btn-inline " target="_self">
+                                <input type="submit"
+                                       value="Đăng nhập" style="background:none;border:none" />
+                            </label>
+                        </li>
+                    </ul>
+                    <script type="text/javascript" src="../Scripts/js/nav.js"></script>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function ($) {
+                            $(".scroll").click(function (event) {
+                                event.preventDefault();
+                                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                            });
+                        });
+                    </script>
+                    <!--script-->
+                    <script>
+                        $(document).ready(function () {
+                            $(".nav li a").click(function () {
+                                $(this).parent().addClass("active");
+                                $(this).parent().siblings().removeClass("active");
+                            });
+                        });
+                    </script>
+                    <!-- script-for sticky-nav -->
+                    <script>
+                        $(document).ready(function () {
+                            var navoffeset = $(".header-home").offset().top;
+                            $(window).scroll(function () {
+                                var scrollpos = $(window).scrollTop();
+                                if (scrollpos >= navoffeset) {
+                                    $(".header-home").addClass("fixed");
+                                } else {
+                                    $(".header-home").removeClass("fixed");
+                                }
+                            });
+
+                        });
+                    </script>
+                    <!-- /script-for sticky-nav -->
+                </div><!-- end h_menu4 -->
+            </div>
+        </div>
+    </div>
     <div class="header" id="home">
         <div class="container">
             <div class="logo">
@@ -85,11 +189,21 @@
                     <a class="toggleMenu" href="#">Menu</a>
                     <ul class="nav">
                         <li class="active"><a href="#home" class="scroll">Home</a></li>
-                        <li><a href="#announce" class="scroll">Announcements</a></li>
-                        <li><a href="#menu" class="scroll">Menus</a></li>
-                        <li><a href="#gallery" class="scroll">Gallery</a></li>
+                        <li><a href="#announce" class="scroll">Hot</a></li>
+                        <li><a href="#menu" class="scroll">News</a></li>
+                        <li><a href="#gallery" class="scroll">Saved</a></li>
                         <li><a href="#about" class="scroll">About</a></li>
                         <li><a href="#contact" class="scroll">Contact</a></li>
+                        <li>
+                            @*<div class="input-group">
+                                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>*@
+                        </li>
                     </ul>
                     <script type="text/javascript" src="../Scripts/js/nav.js"></script>
                     <script type="text/javascript">
@@ -141,7 +255,7 @@
                         <hr />
                     </div>
                 </div>
-            </div>         
+            </div>
             <div class="contact" id="contact">
                 <h3 class="tz-title-2">
                     <span class="tzweight_Bold">Contact</span>
@@ -165,7 +279,7 @@
                             <div class="form-submit1">
                                 <label class="btn btn-primary btn-normal btn-inline " target="_self">
                                     <input type="submit"
-                                    value="Send">
+                                           value="Send">
                                 </label>
                             </div>
                             <div class="clearfix"></div>
@@ -199,9 +313,9 @@
             </script>
             <a class="scroll" href="#home" id="toTop" style="display: block;">
                 <span id="toTopHover"
-                style="opacity: 1;"></span>
+                      style="opacity: 1;"></span>
             </a>
         </div>
-    @RenderSection("scripts", required: false)
+        @RenderSection("scripts", required: false)
 </body>
 </html>
