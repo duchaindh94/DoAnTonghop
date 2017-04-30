@@ -277,7 +277,9 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="Scripts\css\bootstrap.css" />
+    <Content Include="Scripts\css\bootstrap.min.css" />
     <Content Include="Scripts\css\clndr.css" />
+    <Content Include="Scripts\css\simple-sidebar.css" />
     <Content Include="Scripts\css\style.css" />
     <Content Include="Scripts\images\arrows.png" />
     <Content Include="Scripts\images\banner.jpg" />
