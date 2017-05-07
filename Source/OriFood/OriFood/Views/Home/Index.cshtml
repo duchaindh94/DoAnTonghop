@@ -246,25 +246,50 @@
 </div>
 
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog width70pc">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="image-gallery-title">Đây là tiêu đề ảnh??</h4>
             </div>
             <div class="modal-body">
-                <img id="image-gallery-image" class="img-responsive" src="../Scripts/images/pic1.jpg">
+                    <img id="image-gallery-image" class="img-responsive" src="../Scripts/images/pic1.jpg">
             </div>
             <div class="modal-footer">
-                @*<div class="col-md-2">
-                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
-                </div>*@
+                <div class="col-md-3">
+                    <center>
+                        <button type="button" id="show-next-image" class="btn btn-default"><i class="fa fa-heart"></i></button>
+                    </center>                   
+                </div>
                 <div class="col-md-8 text-justify" id="image-gallery-caption">
                     Đây là cái gì đó???
                 </div>
                 @*<div class="col-md-2">
                     <button type="button" id="show-next-image" class="btn btn-default">Next</button>
                 </div>*@
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-3">
+                    <center>
+                        <label>Đây là tên comment</label>
+                    </center>                  
+                </div>
+                <div class="col-md-8 text-justify" id="image-gallery-caption">
+                    Đây là comment!!
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-3">
+                    <center>
+                        <label>Đây là chỗ nhập comment</label>
+                    </center>           
+                </div>
+                <div class="col-md-8 text-justify" id="image-gallery-caption">
+                    <input type="text" class="form-control" id="txtName" placeholder="Nhập bình luận" style="height:40px;" />
+                </div>
+                <div class="col-md-1" style="padding-left:0px; padding-right:0px;">
+                    <button type="button" id="show-next-image" class="btn btn-default" style="background:#e67e22;border-color:#e67e22"><i class="fa fa-comment"></i></button>
+                </div>
             </div>
         </div>
     </div>
