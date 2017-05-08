@@ -7,7 +7,7 @@ using System.Web;
 
 namespace OriFood.Models
 {
-    public class WardModel : IEntityModel<Ward>, IIdentifier, IsDeleted
+    public class PrecinctModel : IEntityModel<Precinct>, IIdentifier, IsDeleted
     {
         public int Id { get; set; }
 
@@ -19,17 +19,17 @@ namespace OriFood.Models
 
         public string DistrictName { get; set; }
 
-        public WardModel()
+        public PrecinctModel()
         {
 
         }
-        public WardModel(Ward entity)
+        public PrecinctModel(Precinct entity)
         {
             this.MapFromEntity(entity);
         }
-        public Ward ToEntity()
+        public Precinct ToEntity()
         {
-            return new Ward()
+            return new Precinct()
             {
                 Id = this.Id,
                 Name = this.Name,
@@ -37,7 +37,7 @@ namespace OriFood.Models
             };
         }
 
-        public IEntityModel<Ward> MapFromEntity(Ward entity)
+        public IEntityModel<Precinct> MapFromEntity(Precinct entity)
         {
             this.Id = entity.Id;
             this.Name = entity.Name;
@@ -47,7 +47,7 @@ namespace OriFood.Models
             return this;
         }
 
-        public void UpdateEntity(Ward entity)
+        public void UpdateEntity(Precinct entity)
         {
             entity.Id = this.Id;
             entity.Name = this.Name;

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace OriFood.Models.Entities
 {
     [Table("Wards")]
-    public class Ward : IIdentifier,IsDeleted
+    public class Precinct : IIdentifier,IsDeleted
     {
         public int Id { get; set; }
 

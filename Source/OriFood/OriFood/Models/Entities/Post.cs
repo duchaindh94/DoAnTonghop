@@ -25,7 +25,7 @@ namespace OriFood.Models.Entities
 
 
         [Required]
-        public int WardId { get; set; }
+        public int PrecinctId { get; set; }
 
 
         [Required]
@@ -47,8 +47,8 @@ namespace OriFood.Models.Entities
         public virtual Province Province { get; set; }
         [ForeignKey("DistrictId")]
         public virtual District District { get; set; }
-        [ForeignKey("WardId")]
-        public virtual Ward Ward { get; set; }
+        [ForeignKey("PrecinctId")]
+        public virtual Precinct Precinct { get; set; }
 
         [Required]
         public string Status { get; set; }
