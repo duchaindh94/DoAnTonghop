@@ -147,10 +147,21 @@
     </Compile>
     <Compile Include="Helpers\BaseController.cs" />
     <Compile Include="Models\DistrictModel.cs" />
+    <Compile Include="Models\Entities\Album.cs" />
+    <Compile Include="Models\Entities\AlbumComment.cs" />
+    <Compile Include="Models\Entities\AlbumLike.cs" />
     <Compile Include="Models\Entities\District.cs" />
     <Compile Include="Models\Entities\Gender.cs" />
+    <Compile Include="Models\Entities\Image.cs" />
+    <Compile Include="Models\Entities\Post.cs" />
+    <Compile Include="Models\Entities\PostComment.cs" />
+    <Compile Include="Models\Entities\PostLike.cs" />
+    <Compile Include="Models\Entities\PostType.cs" />
     <Compile Include="Models\Entities\Province.cs" />
+    <Compile Include="Models\Entities\Report.cs" />
     <Compile Include="Models\Entities\Role.cs" />
+    <Compile Include="Models\Entities\SavePost.cs" />
+    <Compile Include="Models\Entities\Type.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\Entities\Ward.cs" />
     <Compile Include="Models\GenderModel.cs" />
