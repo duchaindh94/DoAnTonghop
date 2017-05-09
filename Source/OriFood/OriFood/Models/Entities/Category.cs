@@ -10,8 +10,8 @@ using OriFood.Models.Entities;
 
 namespace OriFood.Models.Entities
 {
-    [Table("Types")]
-    public class Type : IIdentifier, IsDeleted
+    [Table("Categorys")]
+    public class Category : IIdentifier, IsDeleted
     {
         public int Id { get; set; }
 

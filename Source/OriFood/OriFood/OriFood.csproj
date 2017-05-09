@@ -146,6 +146,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BaseController.cs" />
+    <Compile Include="Models\AlbumCommentModel.cs" />
+    <Compile Include="Models\AlbumLikeModel.cs" />
+    <Compile Include="Models\AlbumModel.cs" />
     <Compile Include="Models\DistrictModel.cs" />
     <Compile Include="Models\Entities\Album.cs" />
     <Compile Include="Models\Entities\AlbumComment.cs" />
@@ -161,19 +164,27 @@
     <Compile Include="Models\Entities\Report.cs" />
     <Compile Include="Models\Entities\Role.cs" />
     <Compile Include="Models\Entities\SavePost.cs" />
-    <Compile Include="Models\Entities\Type.cs" />
+    <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\User.cs" />
-    <Compile Include="Models\Entities\Ward.cs" />
+    <Compile Include="Models\Entities\Precinct.cs" />
     <Compile Include="Models\GenderModel.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\Interfaces\ICreateAudit.cs" />
     <Compile Include="Models\Interfaces\IEntityModel.cs" />
     <Compile Include="Models\Interfaces\IIdentifier.cs" />
     <Compile Include="Models\Interfaces\IsDeleted.cs" />
     <Compile Include="Models\Interfaces\IUpdateAudit.cs" />
+    <Compile Include="Models\PostCommentModel.cs" />
+    <Compile Include="Models\PostLikeModel.cs" />
+    <Compile Include="Models\PostModel.cs" />
+    <Compile Include="Models\PostTypeModel.cs" />
     <Compile Include="Models\ProvinceModel.cs" />
+    <Compile Include="Models\ReportModel.cs" />
     <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\SavePostModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="Models\WardModel.cs" />
+    <Compile Include="Models\PrecinctModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
