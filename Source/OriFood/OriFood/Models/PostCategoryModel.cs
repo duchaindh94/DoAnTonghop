@@ -7,51 +7,51 @@ using System.Web;
 
 namespace OriFood.Models
 {
-    public class PostTypeModel : IEntityModel<PostType>, IIdentifier, IsDeleted
+    public class PostCategoryModel : IEntityModel<PostCategory>, IIdentifier, IsDeleted
     {
         public int Id { get; set; }
         public int PostId { get; set; }
-        public int TypeId { get; set; }
-        public string TypeName { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
         public string Status { get; set; }
         public bool IsDeleted { get; set; }
 
-        public PostTypeModel()
+        public PostCategoryModel()
         {
 
         }
-        public PostTypeModel(PostType entity)
+        public PostCategoryModel(PostCategory entity)
         {
             this.MapFromEntity(entity);
         }
-        public PostType ToEntity()
+        public PostCategory ToEntity()
         {
-            return new PostType()
+            return new PostCategory()
             {
                 Id = this.Id,
                 PostId = this.PostId,
-                TypeId = this.TypeId,
+                CategoryId = this.CategoryId,
                 Status = this.Status
 
             };
         }
 
-        public IEntityModel<PostType> MapFromEntity(PostType entity)
+        public IEntityModel<PostCategory> MapFromEntity(PostCategory entity)
         {
             this.Id = entity.Id;
             this.PostId = entity.Post.Id;
-            this.TypeId = entity.Type.Id;
-            this.TypeName = entity.Type.Name;
+            this.CategoryId = entity.Category.Id;
+            this.CategoryName = entity.Category.Name;
             this.Status = entity.Status;
             this.IsDeleted = entity.IsDeleted;
             return this;
         }
 
-        public void UpdateEntity(PostType entity)
+        public void UpdateEntity(PostCategory entity)
         {
             entity.Id = this.Id;
             entity.PostId = this.PostId;
-            entity.TypeId = this.TypeId;
+            entity.CategoryId = this.CategoryId;
             entity.Status = this.Status;
             entity.IsDeleted = this.IsDeleted;
         }

@@ -159,7 +159,7 @@
     <Compile Include="Models\Entities\Post.cs" />
     <Compile Include="Models\Entities\PostComment.cs" />
     <Compile Include="Models\Entities\PostLike.cs" />
-    <Compile Include="Models\Entities\PostType.cs" />
+    <Compile Include="Models\Entities\PostCategory.cs" />
     <Compile Include="Models\Entities\Province.cs" />
     <Compile Include="Models\Entities\Report.cs" />
     <Compile Include="Models\Entities\Role.cs" />
@@ -177,7 +177,7 @@
     <Compile Include="Models\PostCommentModel.cs" />
     <Compile Include="Models\PostLikeModel.cs" />
     <Compile Include="Models\PostModel.cs" />
-    <Compile Include="Models\PostTypeModel.cs" />
+    <Compile Include="Models\PostCategoryModel.cs" />
     <Compile Include="Models\ProvinceModel.cs" />
     <Compile Include="Models\ReportModel.cs" />
     <Compile Include="Models\RoleModel.cs" />

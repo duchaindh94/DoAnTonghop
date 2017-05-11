@@ -10,8 +10,8 @@ using OriFood.Models.Entities;
 
 namespace OriFood.Models.Entities
 {
-    [Table("PostTypes")]
-    public class PostType : IIdentifier, IsDeleted
+    [Table("PostCategorys")]
+    public class PostCategory : IIdentifier, IsDeleted
     {
         public int Id { get; set; }
 
@@ -19,7 +19,7 @@ namespace OriFood.Models.Entities
         public int PostId { get; set; }
 
         [Required]
-        public int TypeId { get; set; }
+        public int CategoryId { get; set; }
 
         [Required]
         [Display(Name = "Status")]
@@ -29,8 +29,8 @@ namespace OriFood.Models.Entities
         [ForeignKey("PostId")]
         public virtual Post Post { get; set; }
 
-        [ForeignKey("TypeId")]
-        public virtual Type Type { get; set; }
+        [ForeignKey("Category")]
+        public virtual Category Category { get; set; }
 
         public bool IsDeleted { get; set; }
         public int CreatedByUserId { get; set; }
